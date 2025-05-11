@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="favor.jpg" type="image/jpeg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Player - AUSRP Emergency Hamburg</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta property="og:image" content="ausrpimage.jpg">
+    <meta property="og:description" content="Welcome to AUSRP">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="site-logo">
+                    <a href="index.html">
+                        <img src="ausrplogo.png" alt="AUSRP Logo" class="logo-img">
+                    </a>
+                    <span class="logo-text">AUSRP</span>
+                </div>
+
+                <button class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#features" class="nav-link">Features</a>
+                        </li>
+                        <li class="nav-item has-dropdown">
+                            <a href="#" class="nav-link dropdown-toggle active">
+                                Services
+                                <i class="fas fa-chevron-down dropdown-icon"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="private-server.html" class="dropdown-item">Private Server</a></li>
+                                <li><a href="report-player.html" class="dropdown-item">Report Player</a></li>
+                                <li><a href="unban-request.html" class="dropdown-item">Unban Request</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="nav-buttons">
+                        <a href="https://discord.gg/Ausrp25" target="_blank" class="btn btn-secondary">
+                            <i class="fab fa-discord"></i>
+                            Join Discord
+                        </a>
+                        <a href="https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3D72kaqjm0" class="btn btn-primary">
+                            <i class="fab fa-steam"></i>
+                            Join Server
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero private-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Report a Player</h1>
+                    <p class="hero-subtitle">Help us maintain a fair gameplay environment by reporting rule violations</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Report Form Section -->
+        <section class="form-section">
+            <div class="container">
+                <div class="form-container">
+                    <div class="form-header">
+                        <div class="form-icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <h2 class="form-title">Player Report Form</h2>
+                        <p class="form-subtitle">Please provide detailed information about the incident</p>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <div class="alert-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="alert-content">
+                            <p>Please provide as much detail as possible. False reports may result in action against your account.</p>
+                        </div>
+                    </div>
+
+                    <div id="form-message" style="display: none;"></div>
+
+                    <form id="reportForm">
+                        <div class="form-group">
+                            <label for="username" class="form-label">
+                                <i class="fas fa-user"></i>
+                                Roblox Username
+                            </label>
+                            <input type="text" id="username" name="username" class="form-control" required placeholder="Enter the player's username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="violation" class="form-label">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Rule Violation
+                            </label>
+                            <select id="violation" name="violation" class="form-control" required>
+                                <option value="">Select violation type</option>
+                                <option value="hacking">Hacking</option>
+                                <option value="disrespectful">Disrespectful Behavior</option>
+                                <option value="failrp">Fail Roleplay</option>
+                                <option value="teaming">Teaming</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" id="otherViolationGroup" style="display: none;">
+                            <label for="otherViolation" class="form-label">
+                                <i class="fas fa-pen"></i>
+                                Specify Violation
+                            </label>
+                            <input type="text" id="otherViolation" name="otherViolation" class="form-control" placeholder="Please specify the type of violation">
+                        </div>
+                        <div class="form-group">
+                            <label for="details" class="form-label">
+                                <i class="fas fa-info-circle"></i>
+                                Additional Information
+                            </label>
+                            <textarea id="details" name="details" class="form-control" rows="5" required placeholder="Please provide details about the incident, including when it happened and any evidence you may have"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                            <i class="fas fa-paper-plane"></i>
+                                Submit Report Via:
+                            </label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="submitMethod" value="email" required>
+                                    Email
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="submitMethod" value="discord" required>
+                                    Discord
+                                </label>
+            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Report
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="ausrplogo.png" alt="AUSRP Logo" class="footer-logo">
+                    <p class="footer-description">
+                        AUSRP Emergency Hamburg provides the most realistic Australian emergency services roleplay experience.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://discord.gg/Ausrp25" target="_blank" class="social-link" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3D72kaqjm0" class="social-link" aria-label="Steam">
+                            <i class="fab fa-steam"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+            </div>
+                </div>
+
+                <div class="footer-navigation">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="index.html#features" class="footer-link"><i class="fas fa-chevron-right"></i> Features</a></li>
+                        <li><a href="private-server.html" class="footer-link"><i class="fas fa-chevron-right"></i> Private Server</a></li>
+                        <li><a href="report-player.html" class="footer-link"><i class="fas fa-chevron-right"></i> Report Player</a></li>
+                        <li><a href="unban-request.html" class="footer-link"><i class="fas fa-chevron-right"></i> Unban Request</a></li>
+                    </ul>
+        </div>
+
+                <div class="footer-contact">
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <span>support@ausrp.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fab fa-discord contact-icon"></i>
+                        <span>Join our Discord for support</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+        <p>&copy; 2024 AUSRP Emergency Hamburg. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Handle "Other" option in dropdown
+        document.addEventListener('DOMContentLoaded', function() {
+            var violationSelect = document.getElementById('violation');
+            var otherViolationGroup = document.getElementById('otherViolationGroup');
+
+            if (violationSelect && otherViolationGroup) {
+                violationSelect.addEventListener('change', function() {
+                    if (this.value === 'other') {
+                        otherViolationGroup.style.display = 'block';
+                    } else {
+                        otherViolationGroup.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

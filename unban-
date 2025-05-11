@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="favor.jpg" type="image/jpeg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unban Request - AUSRP Private Server</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="hero private-hero">
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="ausrplogo.png" alt="AUSRP Logo" class="logo-img"></a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="private-server.html#features">Features</a></li>
+                <li><a href="private-server.html#rules">Rules</a></li>
+                <li><a href="report-player.html">Report Player</a></li>
+                <li><a href="unban-request.html">Unban Request</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="https://discord.gg/Ausrp25" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-discord"></i>
+                    Join Discord
+                </a>
+                <a href="https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3D72kaqjm0" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-steam"></i>
+                    Join Server
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="report-section">
+        <div class="report-container">
+            <div class="form-warning">
+                <i class="fas fa-exclamation-circle" style="color:#c00;font-size:1.3rem;"></i>
+                <span>Please note: Exploiters will not be unbanned. Make sure to provide accurate and honest information.</span>
+            </div>
+            <form id="unbanForm" class="report-form">
+                <div class="form-group">
+                    <label for="unban-username"><i class="fas fa-user"></i> Roblox Username</label>
+                    <input type="text" id="unban-username" name="username" placeholder="Enter your Roblox username" required>
+                </div>
+                <div class="form-group">
+                    <label for="ban-reason"><i class="fas fa-gavel"></i> Ban Reason</label>
+                    <textarea id="ban-reason" name="banReason" rows="3" placeholder="Please provide the ban reason shown when trying to join the private server" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="unban-explanation"><i class="fas fa-comment-dots"></i> Unban Explanation</label>
+                    <textarea id="unban-explanation" name="explanation" rows="4" placeholder="Please explain why you believe you were wrongfully banned. Be honest and provide as much detail as possible." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Submit Request Via:</label>
+                    <div class="submit-options">
+                        <label class="radio-label">
+                            <input type="radio" name="submitMethod" value="email" required>
+                            Email
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="submitMethod" value="discord" required>
+                            Discord
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="submit-button">
+                    <i class="fas fa-paper-plane"></i>
+                    Submit Unban Request
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <div class="btn-group">
+        <a href="https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3D72kaqjm0" target="_blank" class="btn btn-success btn-lg">
+            <i class="fas fa-play"></i>
+            Join Server Now
+        </a>
+    </div>
+    <footer>
+        <div class="footer-social">
+            <a href="https://discord.gg/Ausrp25" target="_blank" class="social-link" aria-label="Discord">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3D72kaqjm0" target="_blank" class="social-link" aria-label="Roblox">
+                <i class="fab fa-steam"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 AUSRP Emergency Hamburg. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Join Server button
+    if (joinServerBtn) {
+        joinServerBtn.addEventListener('click', function(e) {
+            e.preventDefault(); // This prevents the default link behavior
+            // Your code here
+        });
+    }
+
+    // Check if there are any other event listeners on buttons
+    const allButtons = document.querySelectorAll('a.btn');
+    allButtons.forEach(button => {
+        // Remove any existing listeners and let the links work naturally
+    });
+});
+</script>
