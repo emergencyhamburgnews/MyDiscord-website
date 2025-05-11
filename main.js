@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Explicitly set the server join URLs directly on the elements
     const serverButtons = document.querySelectorAll('a.btn-primary, .social-link[aria-label="Roblox"]');
     serverButtons.forEach(button => {
-        button.href = 'https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3D72kaqjm0';
+        button.href = 'https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3Dpgisejpb';
         button.setAttribute('target', '_blank');
     });
 
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Special case for the Join Server Now button in private-server.html
     const joinServerBtn = document.getElementById('joinServerBtn');
     if (joinServerBtn) {
-        joinServerBtn.href = 'https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3D72kaqjm0';
+        joinServerBtn.href = 'https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3Dpgisejpb';
         joinServerBtn.setAttribute('target', '_blank');
 
         // Remove any click listeners that might be preventing default behavior
