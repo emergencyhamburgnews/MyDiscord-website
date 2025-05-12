@@ -1,4 +1,110 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Like system
+    const likeButton = document.getElementById('likeButton');
+    const likeCount = document.getElementById('likeCount');
+    let likes = parseInt(localStorage.getItem('videoLikes') || '0');
+    let hasLiked = localStorage.getItem('hasLiked') === 'true';
+
+    // Always show total likes count
+    const updateLikeDisplay = () => {
+        if (likeCount) {
+            likeCount.textContent = likes;
+            localStorage.setItem('videoLikes', likes.toString());
+        }
+    };
+
+    // Update initial like count and button state
+    if (likeButton && likeCount) {
+        updateLikeDisplay();
+        if (hasLiked) {
+            likeButton.classList.add('liked');
+        }
+
+        likeButton.addEventListener('click', function() {
+            if (hasLiked) {
+                likes--;
+                hasLiked = false;
+                likeButton.classList.remove('liked');
+            } else {
+                likes++;
+                hasLiked = true;
+                likeButton.classList.add('liked');
+            }
+            likeCount.textContent = likes;
+            localStorage.setItem('videoLikes', likes.toString());
+            localStorage.setItem('hasLiked', hasLiked.toString());
+        });
+    }
+
+    const onlineCount = document.getElementById('onlineCount');
+    const totalCount = document.getElementById('totalCount');
+
+    // Discord member count
+    async function updateDiscordStats() {
+        try {
+            const response = await fetch('https://discord.com/api/guilds/1358340466315362415/widget.json');
+            const data = await response.json();
+
+            if (onlineCount && totalCount) {
+                const realMembers = data.members.filter(member => !member.bot);
+                onlineCount.textContent = realMembers.length;
+                totalCount.textContent = realMembers.length;
+
+                // Update member list if it exists
+                const memberListElement = document.getElementById('memberList');
+                if (memberListElement) {
+                    memberListElement.innerHTML = realMembers.map(member => `
+                        <div class="member-item">
+                            <img src="${member.avatar_url}" alt="${member.username}" class="member-avatar">
+                            <span class="member-name">${member.username}</span>
+                            <span class="member-status ${member.status}"></span>
+                        </div>
+                    `).join('');
+                }
+            }
+        } catch (error) {
+            console.error('Error fetching Discord stats:', error);
+            if (onlineCount) onlineCount.textContent = "0";
+            if (totalCount) totalCount.textContent = "0";
+        }
+    }
+
+    // Discord member count
+    async function updateDiscordStats() {
+        try {
+            const response = await fetch('https://discord.com/api/guilds/1358340466315362415/widget.json');
+            const data = await response.json();
+
+            if (onlineCount && totalCount) {
+                const realMembers = data.members.filter(member => !member.bot);
+                onlineCount.textContent = realMembers.length;
+                totalCount.textContent = realMembers.length;
+
+                // Update member list if it exists
+                const memberListElement = document.getElementById('memberList');
+                if (memberListElement) {
+                    memberListElement.innerHTML = realMembers.map(member => `
+                        <div class="member-item">
+                            <img src="${member.avatar_url}" alt="${member.username}" class="member-avatar">
+                            <span class="member-name">${member.username}</span>
+                            <span class="member-status ${member.status}"></span>
+                        </div>
+                    `).join('');
+                }
+            }
+        } catch (error) {
+            console.error('Error fetching Discord stats:', error);
+            if (onlineCount) onlineCount.textContent = "N/A";
+            if (totalCount) totalCount.textContent = "N/A";
+        }
+    }
+
+    // Update Discord stats every 5 minutes
+    if (onlineCount || totalCount) {
+        updateDiscordStats();
+        setInterval(updateDiscordStats, 300000);
+    }
+
     // Elements
     const header = document.querySelector('.site-header');
     const mobileToggle = document.querySelector('.mobile-toggle');
@@ -735,8 +841,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
 
                 // Create or get message element
-                let messageElement = document.getElementById('submit-message');
-                if (!messageElement) {
+                let messageElement = document.getElementById('submit-message');if (!messageElement) {
                     messageElement = document.createElement('div');
                     messageElement.id = 'submit-message';
                     messageElement.className = 'alert';
