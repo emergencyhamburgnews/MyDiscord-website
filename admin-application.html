@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="favor.jpg" type="image/jpeg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Application - AUSRP Emergency Hamburg</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="site-logo">
+                    <a href="index.html">
+                        <img src="ausrplogo.png" alt="AUSRP Logo" class="logo-img">
+                    </a>
+                    <span class="logo-text">AUSRP</span>
+                </div>
+
+                <button class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#features" class="nav-link">Features</a>
+                        </li>
+                        <li class="nav-item has-dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                Services
+                                <i class="fas fa-chevron-down dropdown-icon"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="private-server.html" class="dropdown-item">Private Server</a></li>
+                                <li><a href="report-player.html" class="dropdown-item">Report Player</a></li>
+                                <li><a href="unban-request.html" class="dropdown-item">Unban Request</a></li>
+                                <li><a href="admin-application.html" class="dropdown-item">Admin Application</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="nav-buttons">
+                        <a href="https://discord.gg/Ausrp25" target="_blank" class="btn btn-secondary">
+                            <i class="fab fa-discord"></i>
+                            Join Discord
+                        </a>
+                        <a href="https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3Dpgisejpb" class="btn btn-primary">
+                            <i class="fab fa-steam"></i>
+                            Join Server
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero private-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Admin Application</h1>
+                    <p class="hero-subtitle">Join our staff team and help maintain our community standards</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <div class="container">
+                <div class="admin-application">
+                    <div id="introSection">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle alert-icon"></i>
+                            <div>
+                                <p>Welcome to the AUSRP Admin Application! This application is for players who want to become part of the staff team in our Australia roleplay server.</p>
+                                <ul style="margin-top: 10px;">
+                                    <li>You will be given 50 questions to answer</li>
+                                    <li>You have 30 minutes to complete the application.</li>
+                                    <li>You can only submit the application once.</li>
+                                    <li>Please answer all questions honestly and thoroughly.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button id="startButton" class="btn btn-primary btn-lg" style="margin-top: 20px; width: 100%;">
+                            <i class="fas fa-play"></i>
+                            Start Application
+                        </button>
+                    </div>
+
+                    <div id="questionContainer" style="display: none;">
+                        <div id="timer" class="application-timer"></div>
+                        <div id="allQuestions"></div>
+                        <button id="submitButton" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 20px;">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Application
+                        </button>
+                    </div>
+
+                    <div id="completionMessage" style="display: none;" class="completion-message">
+                        <h2><i class="fas fa-check-circle"></i> Thank you for applying!</h2>
+                        <p>Your application has been submitted successfully. Our staff team will review it shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="ausrplogo.png" alt="AUSRP Logo" class="footer-logo">
+                    <p class="footer-description">
+                        AUSRP Emergency Hamburg provides the most realistic Australian emergency services roleplay experience.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://discord.gg/Ausrp25" target="_blank" class="social-link">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3Dpgisejpb" class="social-link">
+                            <i class="fab fa-steam"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-navigation">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#features" class="footer-link"><i class="fas fa-chevron-right"></i> Features</a></li>
+                        <li><a href="private-server.html" class="footer-link"><i class="fas fa-chevron-right"></i> Private Server</a></li>
+                        <li><a href="report-player.html" class="footer-link"><i class="fas fa-chevron-right"></i> Report Player</a></li>
+                        <li><a href="unban-request.html" class="footer-link"><i class="fas fa-chevron-right"></i> Unban Request</a></li>
+                        <li><a href="admin-application.html" class="footer-link"><i class="fas fa-chevron-right"></i> Admin Application</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <span>support@ausrp.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fab fa-discord contact-icon"></i>
+                        <span>Join our Discord for support</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 AUSRP Emergency Hamburg. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const questions = [
+            "What is your Roblox username?",
+            "What is your Discord username and tag?",
+            "What time zone are you in?",
+            "How old are you?",
+            "What country are you from?",
+            "Do you have access to a working microphone?",
+            "Can you record and provide evidence when needed?",
+            "Do you have any previous admin/moderator experience?",
+            "If yes, please explain where and what your duties were.",
+            "Why are you applying to be an admin in AUSRP?",
+            "How many hours can you dedicate to AUSRP per day?",
+            "What days are you usually available?",
+            "Will your schedule change during holidays or school breaks?",
+            "Are you currently a staff member in any other servers?",
+            "Will AUSRP be your main priority if selected?",
+            "A player is RDMing multiple users. What would you do?",
+            "A user is mic spamming in-game. How do you handle it?",
+            "A friend of yours breaks a rule. What would you do?",
+            "A staff member is abusing their powers. How do you respond?",
+            "A player is falsely accusing someone. What's your process?",
+            "You witness a glitch being abused. What steps do you take?",
+            "A new player is confused and needs help. What do you do?",
+            "Someone threatens to DDoS the server. What is your reaction?",
+            "A user is spamming racial slurs. What actions do you take?",
+            "A player is reporting a bug. What do you do?",
+            "What does RDM mean?",
+            "What does VDM mean?",
+            "What is FearRP?",
+            "What is Metagaming?",
+            "What is Powergaming?",
+            "What are the consequences of FailRP?",
+            "Is it okay to spawn kill during events?",
+            "When is it okay to use weapons in RP?",
+            "Is staff allowed to break rules while off-duty?",
+            "What should you do if you are unsure about a rule?",
+            "Describe yourself in 3 words.",
+            "What makes you a good leader?",
+            "How do you handle stress or conflict?",
+            "Are you comfortable working in a team environment?",
+            "How would others describe your personality?",
+            "Have you ever been banned in AUSRP or any other RP server?",
+            "What do you believe is good roleplay?",
+            "What are your thoughts on staff professionalism?",
+            "Are you willing to follow the staff chain of command?",
+            "What would you do if you made a mistake while on-duty?",
+            "Do you understand that abuse of power will result in removal?",
+            "Do you understand this is a voluntary position?",
+            "Are you willing to complete training before becoming staff?",
+            "What do you hope to bring to the AUSRP team?",
+            "Is there anything else you'd like to add to your application?"
+        ];
+
+        let currentQuestionIndex = 0;
+        let answers = [];
+        let username = '';
+        let timeLeft = 30 * 60; // 30 minutes in seconds
+        let timerInterval;
+
+        const startButton = document.getElementById('startButton');
+        const introSection = document.getElementById('introSection');
+        const questionContainer = document.getElementById('questionContainer');
+        const currentQuestion = document.getElementById('currentQuestion');
+        const nextButton = document.getElementById('nextButton');
+        const completionMessage = document.getElementById('completionMessage');
+        const timerElement = document.getElementById('timer');
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `Time remaining: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 300) { // 5 minutes warning
+                timerElement.classList.add('warning');
+            }
+            
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                submitApplication();
+            }
+            timeLeft--;
+        }
+
+        function displayQuestion() {
+            let questionText = questions[currentQuestionIndex];
+            if (currentQuestionIndex > 0 && username && questionText.includes('[username]')) {
+                questionText = questionText.replace('[username]', username);
+            }
+
+            currentQuestion.innerHTML = `
+                <label for="answer">${currentQuestionIndex + 1}. ${questionText}</label>
+                ${questionText.length > 100 ? 
+                    '<textarea id="answer" rows="4"></textarea>' : 
+                    '<input type="text" id="answer" />'}
+            `;
+
+            const answerInput = currentQuestion.querySelector('#answer');
+            if (answers[currentQuestionIndex]) {
+                answerInput.value = answers[currentQuestionIndex];
+            }
+        }
+
+        function submitApplication() {
+            clearInterval(timerInterval);
+            questionContainer.style.display = 'none';
+            completionMessage.style.display = 'block';
+            
+            // Here you could add code to send the answers to your server
+            console.log('Answers:', answers);
+        }
+
+        startButton.addEventListener('click', () => {
+            introSection.style.display = 'none';
+            questionContainer.style.display = 'block';
+            displayQuestion();
+            timerInterval = setInterval(updateTimer, 1000);
+            updateTimer();
+        });
+
+        nextButton.addEventListener('click', () => {
+            const answerInput = document.querySelector('#answer');
+            answers[currentQuestionIndex] = answerInput.value;
+
+            if (currentQuestionIndex === 0) {
+                username = answerInput.value;
+            }
+
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion();
+            } else {
+                submitApplication();
+            }
+        });
+    </script>
+    <script src="admin-application.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
