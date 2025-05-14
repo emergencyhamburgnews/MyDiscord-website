@@ -258,13 +258,28 @@ img {
 }
 
 .btn-accent {
-  background: var(--accent);
+  background: #E53E3E;
   color: var(--text-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
 }
 
 .btn-accent:hover {
-  background: #ef4444;
+  background: #C53030;
   transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .btn-accent {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 .btn-success {
@@ -451,9 +466,10 @@ img {
 /* Compact Private Server Promo */
 .private-server {
   padding: var(--space-2xl) 0;
-  background: linear-gradient(to right, var(--primary-dark), var(--primary));
+  background: rgb(35, 65, 180);
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
 .private-server-content {
@@ -477,21 +493,30 @@ img {
 }
 
 .server-features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-lg);
-  margin-bottom: var(--space-xl);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
 }
 
 .server-feature {
-  flex: 1;
-  min-width: 180px;
-  max-width: 220px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
   text-align: center;
-  padding: var(--space-lg);
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-md);
+  transition: transform 0.2s;
+}
+
+@media (max-width: 768px) {
+  .server-features {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  
+  .server-feature {
+    margin-bottom: 1rem;
+  }
 }
 
 .feature-icon {
